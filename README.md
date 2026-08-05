@@ -10,9 +10,11 @@ brew tap StackGuardian/tap
 
 | Formula | What it is |
 |---|---|
+| `sg-cli` | Manages resources on the StackGuardian platform |
 | `sg-dr` | Recovers StackGuardian-managed infrastructure when StackGuardian is unavailable |
 
 ```bash
+brew install stackguardian/tap/sg-cli
 brew install stackguardian/tap/sg-dr
 ```
 
@@ -21,7 +23,7 @@ up front rather than leaving it to Homebrew, and to scope the grant to one
 formula rather than the whole tap:
 
 ```bash
-brew trust --formula stackguardian/tap/sg-dr
+brew trust --formula stackguardian/tap/sg-cli
 ```
 
 ## Verifying what you install
