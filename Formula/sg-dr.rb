@@ -7,6 +7,14 @@ class SgDr < Formula
   homepage "https://github.com/StackGuardian/sg-dr"
   license "Apache-2.0"
 
+  # How the tap's autobump workflow discovers a new release. Without this
+  # `brew bump` has nowhere to look, since the urls live inside on_* blocks
+  # rather than at the top level.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   on_macos do
     on_intel do
       url "https://github.com/StackGuardian/sg-dr/releases/download/v1.0.0/sg-dr_1.0.0_darwin_amd64.tar.gz"
