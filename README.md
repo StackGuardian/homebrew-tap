@@ -18,13 +18,16 @@ brew install stackguardian/tap/sg-cli
 brew install stackguardian/tap/sg-dr
 ```
 
-Homebrew 6.0 wants trust before loading a tap outside its own. To settle that
-up front rather than leaving it to Homebrew, and to scope the grant to one
-formula rather than the whole tap:
+Homebrew 6.0 wants trust before loading a tap outside its own. Granting it once
+covers every formula here, including any added later:
 
 ```bash
-brew trust --formula stackguardian/tap/sg-cli
+brew trust --tap stackguardian/tap
 ```
+
+Homebrew's own advice is to trust individual items where you can. If you only
+ever want one of these tools, `brew trust --formula stackguardian/tap/sg-dr`
+grants strictly less.
 
 ## Verifying what you install
 
