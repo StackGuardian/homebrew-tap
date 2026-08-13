@@ -29,6 +29,14 @@ Homebrew's own advice is to trust individual items where you can. If you only
 ever want one of these tools, `brew trust --formula stackguardian/tap/sg-dr`
 grants strictly less.
 
+## Shell completions
+
+Both formulae install completions for bash, zsh and fish, generated from the
+binary being installed so they match that version's commands and flags. They
+work once Homebrew's completion directories are wired into your shell, which
+`brew shellenv` does for zsh and fish; bash additionally needs
+`brew install bash-completion@2`. Open a new shell after installing.
+
 ## Verifying what you install
 
 Formulae pin the SHA-256 of every archive, so Homebrew refuses anything that

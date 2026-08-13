@@ -32,6 +32,8 @@ class SgCli < Formula
 
   def install
     bin.install "sg-cli"
+
+    generate_completions_from_executable(bin/"sg-cli", "completion")
   end
 
   test do

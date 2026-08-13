@@ -1,4 +1,5 @@
-# Generated for v1.0.0. Edits here are overwritten by the next release.
+# Generated for v1.0.0. `brew bump` rewrites the urls and hashes on each
+# release, so edits to those are lost; the rest of the formula is kept by hand.
 #
 # No version stanza: Homebrew reads it from the archive names, and declaring
 # it as well fails `brew audit --strict` as redundant.
@@ -39,6 +40,11 @@ class SgDr < Formula
 
   def install
     bin.install "sg-dr"
+
+    # cobra generates these; running the freshly installed binary keeps the
+    # completions in step with the command tree of this exact version, which a
+    # checked-in copy would not be.
+    generate_completions_from_executable(bin/"sg-dr", "completion")
   end
 
   test do
